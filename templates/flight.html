@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Flight
+{% endblock %}
+
+
+{% block body %}
+    <h1>Flight Details</h1>
+
+    <table class="table-bordered table-striped">
+        <tr>
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>Duraton (minutes)</th>
+        </tr>
+        <tr>
+            <td>{{ flight.origin }}</td>
+            <td>{{ flight.destination }}</td>
+            <td>{{ flight.duration }}</td>
+        </tr>
+    </table>
+
+    <h2>Passengers</h2>
+    <table class="table-bordered table-striped">
+        {% for passenger in passengers %}
+            <tr>
+                <td>{{ passenger.name }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td>No passengers.</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
