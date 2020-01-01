@@ -10,8 +10,8 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db.init_app(app)
 
 def main():
-    db.create_all()
-
+    for flight in Flight.query.all():
+        print(f"Flight from {flight.origin} to {flight.destination} lasting: {flight.duration} minutes.")
 
 if __name__ == "__main__":
     with app.app_context():

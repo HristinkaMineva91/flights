@@ -8,4 +8,9 @@
     <h1>Success!</h1>
 
     You have successfully booked your flight.
+
+    <ul>
+        <li><a href="{{ url_for('index') }}">Add another passenger</a></li>
+        <li><a href="{{ url_for('flights') }}">List Flights</a></li>
+    </ul>
 {% endblock %}
